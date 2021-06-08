@@ -7,11 +7,11 @@ We can also leverage UI API to solve the dependent pick list problem.
 We can use the User Interface Api to fetch the picklist values of an object based on its record types.
 We can fetch picklist(Dependent & Not Dependent)/Multiselect picklist.
 
-Link for : User Interface API Developer Guide ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.htm )
+<b>Link</b> : User Interface API Developer Guide ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.htm )
 
-Result Body structure : ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_responses_picklist_values.htm#ui_api_responses_picklist_values )
+<b>Result Body structure</b> : ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_responses_picklist_values.htm#ui_api_responses_picklist_values )
 
-Syntax Used : /ui-api/object-info/{objectApiName}/picklist-values/{recordTypeId}/{fieldApiName}
+<b>Syntax Used</b> : /ui-api/object-info/{objectApiName}/picklist-values/{recordTypeId}/{fieldApiName}
 
 objectApiName—The API name of a supported object.
 recordTypeId—The ID of the record type.
@@ -19,15 +19,15 @@ fieldApiName—The API name of the picklist field on the object.
 
 Using this code you can fetch Dependent picklist values of an object.
 
-Example : Account have two dependent picklist. Project type and Project Subtype.
+<b>Example</b> : Account have two dependent picklist. Project type and Project Subtype.
 
 Project Subtype field values are dependent on Project Type picklist values.
 
 So we will pass the API name of "Project Subtype" field which will return the data containing  Project type and Project Subtype field values.
 
-Prerequisites :
+<b>Prerequisites</b> :
 
-Note: Make sure you have proper field level / object level / Profile level permission.
+<b>Note</b>: Make sure you have proper field level / object level / Profile level permission.
 
 1) Create remote site settings with your org endpoint.
      String host = System.Url.getSalesforceBaseURL().toExternalForm();
