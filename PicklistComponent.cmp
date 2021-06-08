@@ -1,5 +1,5 @@
-<aura:component controller="Add Controller Here"
-              implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:appHostable,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" access="global" >
+<aura:component controller="Add Controller Here" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,
+            force:hasRecordId,force:appHostable,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" access="global" >
 
 <aura:attribute name="Acc" type="Account" default="{'sobjectType' :'Account'}"/>    
 
@@ -11,38 +11,40 @@
 
 <aura:attribute name="controllingFieldAPI" type="string" default="Project_Type__c" description="store field API name of Controller field"/>
 <aura:attribute name="dependingFieldAPI" type="string" default="Project_SubType__c" description="store field API name of dependent field"/>
- <aura:attribute name="recordTypeName" type="string" default="Canada_PSO" description="store Name of Record Type of your Object" />
+<aura:attribute name="recordTypeName" type="string" default="Canada_PSO" description="store Name of Record Type of your Object" />
 <!-- creating attributes for Dependent picklist -->
 
-
-   <lightning:layout multipleRows="true">
-
-                                       <lightning:layoutItem padding="around-small" size="6" smallDeviceSize="12" mediumDeviceSize="6">
-                                             <lightning:select name="controllerFld"  messageWhenValueMissing="Field Value Required"
-                                                              value="{!v.Acc.Project_Type__c}" aura:id="projDetReq" required="{!v.ReqValue}"
-                                                              label="Project Type"
-                                                              onchange="{!c.onControllerFieldChange}">
-                                                <option value="">--None--</option> 
-                                                <aura:iteration items="{!v.listControllingValues}" var="val">
-                                                    <option value="{!val}">{!val}</option>
-                                                </aura:iteration>
-                                            </lightning:select>                                                                                                                              
-                                        </lightning:layoutItem> 
-
-                                        <lightning:layoutItem padding="around-small" size="6" smallDeviceSize="12" mediumDeviceSize="6">
-                                            <lightning:select name="dependentFld"   messageWhenValueMissing="Field Value Required"
-                                                              value="{!v.Acc.Project_SubType__c}"
-                                                              label="Project SubType" aura:id="projDetReq" required="{!v.ReqValue}"
-                                                              disabled="{!v.bDisabledDependentFld}">
-                                                <option value="">--None--</option>
-                                                <aura:iteration items="{!v.listDependingValues}" var="val"> 
-                                                    <option value="{!val}">{!val}</option>
-                                                </aura:iteration>
-                                            </lightning:select> 
-                                         </lightning:layoutItem> 
-
-                                      </lightning:layout>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
 
+              <lightning:layout multipleRows="true">
 
-   </aura:component>
+                                   <lightning:layoutItem padding="around-small" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+                                         <lightning:select name="controllerFld"  messageWhenValueMissing="Field Value Required"
+                                                          value="{!v.Acc.Project_Type__c}" aura:id="projDetReq" required="{!v.ReqValue}"
+                                                          label="Project Type"
+                                                          onchange="{!c.onControllerFieldChange}">
+                                            <option value="">--None--</option> 
+                                            <aura:iteration items="{!v.listControllingValues}" var="val">
+                                                <option value="{!val}">{!val}</option>
+                                            </aura:iteration>
+                                        </lightning:select>                                                                                                                              
+                                    </lightning:layoutItem> 
+
+                                    <lightning:layoutItem padding="around-small" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+                                        <lightning:select name="dependentFld"   messageWhenValueMissing="Field Value Required"
+                                                          value="{!v.Acc.Project_SubType__c}"
+                                                          label="Project SubType" aura:id="projDetReq" required="{!v.ReqValue}"
+                                                          disabled="{!v.bDisabledDependentFld}">
+                                            <option value="">--None--</option>
+                                            <aura:iteration items="{!v.listDependingValues}" var="val"> 
+                                                <option value="{!val}">{!val}</option>
+                                            </aura:iteration>
+                                        </lightning:select> 
+                                     </lightning:layoutItem> 
+
+                </lightning:layout>
+
+
+
+ </aura:component>
