@@ -1,6 +1,6 @@
 # Fetch-Picklist-Using-User-Interface-Api
 
-I have been working on Aura (Lightning) components for last 6 months and the common issue with the Dependent picklist which I found while developing an Aura (lightning( component is how to render them on the basis of the record’s recordType.
+I have been working on Aura (Lightning) components and the common issue with the Dependent picklist which I found while developing an Aura (lightning( component is how to render them on the basis of the record’s recordType.
 Salesforce has provided an amazing User Interface API, which Lightning Experience uses to get data and metadata from Salesforce in a single response.
 We can also leverage UI API to solve the dependent pick list problem.
 
@@ -8,6 +8,8 @@ We can use the User Interface Api to fetch the picklist values of an object base
 We can fetch picklist(Dependent & Not Dependent)/Multiselect picklist.
 
 Link for : User Interface API Developer Guide ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.htm )
+
+Result Body structure : ( https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_responses_picklist_values.htm#ui_api_responses_picklist_values )
 
 Syntax Used : /ui-api/object-info/{objectApiName}/picklist-values/{recordTypeId}/{fieldApiName}
 
